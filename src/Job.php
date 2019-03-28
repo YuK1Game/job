@@ -1,6 +1,8 @@
 <?php
 namespace YuK1;
 
+use YuK1\Task;
+
 use Symfony\Component\Console\Helper\ProgressBar as SymfonyProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
