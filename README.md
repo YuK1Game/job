@@ -29,8 +29,8 @@ $job->run();
 
 ## Test
 
-`composer test test`
+`composer test tests`
 
 ## Author
 
-[tcnksm](https://github.com/yuk1game)
+[YuK1Game](https://github.com/yuk1game)
