@@ -9,14 +9,11 @@ class JobTest extends \PHPUnit\Framework\TestCase
     {
         $job = new Job();
 
-        for ($i = 0 ; $i < 10 ; $i++) {
-            $priority = rand(0, 5);
-
-            $job->add(new Task(function() use($i) {
-                printf("Hello number '%d'!" . PHP_EOL, $i);
-            }, $priority, $priority > 0 ? sprintf('My priority is %d.', $priority) : null));
-        }
-
+        $task1 = new Task(function() { echo 'Task 1'; }, 3, 'Task 1 runnning.');
+        $task2 = new Task(function() { echo 'Task 2'; });
+        $task3 = new Task(function() { echo 'Task 3'; }, 1, 'Task 3 runnning.');
+        
+        $job->add($task1, $task2, $task3);
         $job->run();
     }
 }

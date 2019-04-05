@@ -54,8 +54,10 @@ class Job
      * 
      * @param YuK1\Task $task
      */
-    public function add(Task $task) {
-        $this->_tasks->push($task);
+    public function add(...$tasks) {
+        foreach ($tasks as $task) {
+            $this->_tasks->push($task);
+        }
     }
 
     /**
@@ -141,7 +143,8 @@ class Job
      */
     public function tasks() {
         return $this->_tasks->sortBy(function(Task $task) {
-            return $task->get_priority();
+            $priority = $task->get_priority();
+            return is_numeric($priority) ? $priority : 65535;
         });
     }
 

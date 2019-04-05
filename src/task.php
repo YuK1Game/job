@@ -25,7 +25,7 @@ class Task
      * @param int priority
      * @param string message
      */
-    public function __construct(callable $action, int $priority = 0, string $message = null) {
+    public function __construct(callable $action, int $priority = null, string $message = null) {
         $this->_action = $action;
         $this->_priority = $priority;
         $this->_message = $message;
